@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="js/jQuery/jquery-1.11.0.min.js"></script>
+		<script src="js/startbootstrap-sb-admin-1.0.3/js/bootstrap.min.js"></script>
+		<link href="js/startbootstrap-sb-admin-1.0.3/css/bootstrap.min.css" rel="stylesheet">
+		<link href="js/startbootstrap-sb-admin-1.0.3/css/sb-admin.css" rel="stylesheet">
+		<link href="js/startbootstrap-sb-admin-1.0.3/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" type="text/css" href="css/datepicker.css">
+		<link rel="stylesheet" type="text/css" href="css/toastr.css">
+		<link rel="stylesheet" type="text/css" href="css/toastr.min.css">
+		<script src="js/bootstrap-datepicker.js"></script>
+		<script src="js/principal.js"></script>
+		<script src="js/calls.js"></script>
+		<script src="js/utiles.js"></script>
+		<script src="js/campanha.js"></script>
+		<script src="js/toastr.min.js"></script>
+	</head>
+	<body>
+		<div id="wrapper">
+			<div id="page-wrapper">
+	            <div class="container-fluid">
+	             <!-- Page Heading -->
+	                <div class="row">
+	                    <div class="col-lg-12">
+	                        <h1 class="page-header">
+	                            Campa&ntilde;a <small>Crear Campa&ntilde;a</small>
+	                        </h1>
+	                        <ol class="breadcrumb">
+		                            <li id="btnListarEstadisticasLanzadas" class="active" style="cursor:pointer;">
+		                                <i class="fa fa-long-arrow-right"></i> Ver las campa&ntilde;as lanzadas
+		                            </li>
+		                        </ol>
+	                        <div class="dropdown">
+			                    <button id="btnVerIntegrantes" type="submit" class="btn btn-default dropdown-toggle" data-toggle="dropdown" style="margin-bottom:7px;">ver integrantes</button>
+			                    <ul  id="listaUsuariosAdheridos" class="dropdown-menu">
+			                    </ul>
+							</div>
+	                    </div>
+	                </div>	                   
+	                <!-- /.row -->
+	                <div  class="row" style="margin-top:20px">
+	                <div class="col-lg-6">
+		                <form role="form">
+		                    <div id="divNombreCamp" class="form-group">
+		                        <label>nombre de la campa&ntilde;a</label>
+		                        <input id="inputNombre" class="form-control">
+		                    </div>
+		                    <div id="divMensaje" class="form-group">
+		                        <label>mensaje</label>
+		                        <input id="inputMensaje" class="form-control">
+		                    </div>
+		                    <div id="divFechas">
+		                    	<div class="well" style="background:#fff">
+									<table class="table">
+											<tr>
+												<th style="border-top:none">Fecha de Inicio: <input readonly type="text" class="form-control" 
+														data-date-format="dd/mm/yyyy" value="" id="fechaInicio"></th>
+												<th style="border-top:none">Fecha de Finalizaci&oacute;n: <input readonly type="text" class="form-control" 
+														data-date-format="dd/mm/yyyy"value="" id="fechaFin"></th>
+											</tr>
+									</table>
+								</div>
+		                    </div>
+		                    <button id="btnCrearCampanha" type="submit" class="btn btn-danger">lanzar campa&ntilde;a</button>
+		                </form>
+		            </div>
+
+		            <div class="col-lg-6">
+		            	<form role="form" id="formUsuarios">
+		            		<label>buscar por</label>
+		            		<table class="table">
+								<tr>
+									<th style="border-top:none">
+										<div class="form-group input-group">
+			                                <input id="inputBuscar" type="text" class="form-control" placeholder="nombre">
+			                                <span id="btnBuscarPorNombre" class="input-group-btn"><button class="btn btn-default" type="button"><i class="fa fa-search"></i></button></span>
+			                            </div>
+			                        </th>
+									<th style="border-top:none"><button id="btnBuscarPorReputacion" type="submit" class="btn btn-primary">reputaci&oacute;n</button></th>
+									<th style="border-top:none"><button id="btnBuscarCategoriaA" type="submit" class="btn btn-primary">Categor&iacute;a A</button></th>
+									<th style="border-top:none"><button id="btnBuscarCategoriaB" type="submit" class="btn btn-primary">Categor&iacute;a B</button></th>
+									<th style="border-top:none"><button id="btnBuscarTodos" type="submit" class="btn btn-primary">todos</button></th>
+								</tr>
+							</table>
+		            	</form>
+		            	<button id="btnAddAll" type="submit" class="btn btn-primary">agregar a todos</button>
+		            	<div class="panel-body">
+							<div id="listaUsuarios" class="list-group">
+							</div>
+						</div>
+		            </div>
+		            </div>
+	            </div>
+	        </div>
+	    </div>
+	</body>
+</html>
