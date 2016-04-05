@@ -17,7 +17,7 @@ function ajaxRequest(pUrl, pType, pData, pSuccessCallback){
             console.log("Response from "+url+": "+res);
             pSuccessCallback(response); //tanto si tiene error true or false
         }).fail(function (error) {
-            mostrarAlerta("Error", "Ha ocurrido un error, intentalo más tarde.");
+            mostrarAlerta("Error", "Ha ocurrido un error, intentalo m\u00e1s tarde.");
         });
 
 }
