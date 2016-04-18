@@ -11,7 +11,7 @@ $(document).ready(function(){
 	ajaxRequest("/admin/validateAccessToken", "POST", paramValidate, function(responseValidateAccessToken){
 		responseValidateAccessToken = JSON.parse(responseValidateAccessToken);
 		if(responseValidateAccessToken.error == true){
-			window.open("login.html", "_self");
+			window.open("index.html", "_self");
 		} else {
 			$('#wrapper').show();
 

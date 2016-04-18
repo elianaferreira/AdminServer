@@ -87,7 +87,7 @@ $(document).ready(function(){
 				mostrarAlerta("Error", "Hubo un error al cerrar la sesi&oacute;n. Int&eacute;ntelo m&aacute;s tarde.");
 			} else {
 				localStorage.clear();
-				window.open("login.html", "_self");
+				window.open("index.html", "_self");
 			}
 		});
 		
