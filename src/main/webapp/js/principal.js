@@ -48,20 +48,20 @@ $(document).ready(function(){
 	                        <a href=""><i class="fa fa-fw fa-map-marker"></i> Mapa</a>\
 	                    </li>\
 	                    <li>\
-                        <a href="javascript:;" data-toggle="collapse" data-target="#adminDD"><i class="fa fa-fw fa-arrows-v"></i> Administrador <i class="fa fa-fw fa-caret-down"></i></a>\
+                        <a id="adminSection" href="javascript:;" data-toggle="collapse" data-target="#adminDD"><i class="fa fa-fw fa-arrows-v"></i> Administrador <i class="fa fa-fw fa-caret-down"></i></a>\
                         <ul id="adminDD" class="collapse">\
                             <li>\
-                                <a href="#">Agregar</a>\
+                                <a href="agregarAdministrador.html">Agregar</a>\
                             </li>\
                             <li>\
                                 <a href="profile.html">Modificar</a>\
                             </li>\
                             <li>\
-                                <a href="#">Eliminar</a>\
+                                <a href="eliminarAdministrador.html">Eliminar</a>\
                             </li>\
-	                    	<li>\
-                        		<a href="altaAdministrador.html">Dar de alta</a>\
-	                    	</li>\
+                            <li>\
+                                <a href="altaAdministrador.html">Dar de alta</a>\
+                            </li>\
                         </ul>\
                     </li>\
 	                </ul>\
