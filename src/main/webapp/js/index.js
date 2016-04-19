@@ -25,8 +25,8 @@ $(document).ready(function(){
 					var adminJson = JSON.parse(jsonResponse.msj);
 					localStorage.setItem("accessToken", adminJson["accessToken"]);
 					localStorage.setItem("adminUser", adminJson["adminname"]);
-					localStorage.setItem("adminNombre", adminJson["nombre"]);
-					localStorage.setItem("adminApellido", adminJson["apellido"]);
+					localStorage.setItem("adminNombre", adminJson["name"]);
+					localStorage.setItem("adminApellido", adminJson["lastname"]);
 					window.open("estadisticas.html", "_self");
 				}
 			});
