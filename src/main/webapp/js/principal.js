@@ -22,9 +22,6 @@ $(document).ready(function(){
 	                        <li>\
 	                            <a href="profile.html"><i class="fa fa-fw fa-user"></i> Perfil</a>\
 	                        </li>\
-	                        <li>\
-	                            <a href="#"><i class="fa fa-fw fa-gear"></i> Config</a>\
-	                        </li>\
 	                        <li class="divider"></li>\
 	                        <li>\
 	                            <a id="cerrarSesion" href=""><i class="fa fa-fw fa-power-off"></i> Cerrar Sesi&oacute;n</a>\
