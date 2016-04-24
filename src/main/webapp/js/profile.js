@@ -160,6 +160,12 @@ $(document).ready(function(){
 									if(response.error == true){
 										mostrarAlerta("Error", response.msj);
 									} else {
+										//cambiamos los datos guardados localmente con los actualizados
+										var jsonNuevosDatos = JSON.parse(response.msj);
+										localStorage.setItem("adminUser", jsonNuevosDatos["adminname"]);
+										localStorage.setItem("adminNombre", jsonNuevosDatos["name"]);
+										localStorage.setItem("adminApellido", jsonNuevosDatos["lastname"]);
+										
 										//recargamos la pagina para que traiga los nuevos valores
 										$('fieldset').attr('disabled', true);
 										$('#btnConfirmar').attr('disabled', true);
