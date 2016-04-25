@@ -321,7 +321,7 @@ $(document).ready(function(){
 						tempJson = JSON.parse(localStorage.getItem("tempCampanha"));
 
 						var params = {
-							adminName: getAdminUser(),
+							admin: getAdminUser(),
 							accessToken: getAccessToken(),
 							nombre: tempJson.nombre,
 							mensaje: tempJson.mensaje,

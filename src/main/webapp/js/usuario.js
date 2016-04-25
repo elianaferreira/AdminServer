@@ -196,7 +196,7 @@ $(document).ready(function(){
 					borrarVestigiosModal();
 
 					var parametros = {
-						adminName: getAdminUser(),
+						admin: getAdminUser(),
 						accessToken: getAccessToken(),
 						username: usernameSelected
 					}

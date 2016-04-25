@@ -258,7 +258,7 @@ $(document).ready(function(){
 											$('#myModal').modal('hide');
 											borrarVestigiosModal();*/
 											var params = {
-												adminName: getAdminUser(),
+												admin: getAdminUser(),
 												accessToken: getAccessToken(),
 												nombre: nombreCampanha,
 												mensaje: mensajeCampanha,
