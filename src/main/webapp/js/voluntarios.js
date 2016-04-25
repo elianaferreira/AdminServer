@@ -79,6 +79,8 @@ $(document).ready(function(){
 					jsonTemp["email"] = email;
 					jsonTemp["direccion"] = direccion;
 					jsonTemp["telefono"] = telefono;
+					
+					listaVoluntarios.push(jsonTemp);
 
 				 });
 				//console.log(JSON.stringify(listaVoluntarios));
