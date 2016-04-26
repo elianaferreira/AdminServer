@@ -7,6 +7,7 @@ function ajaxRequest(pUrl, pType, pData, pSuccessCallback){
 	console.log("Request to: " + url + " with params: " + JSON.stringify(pData));
         $.ajax({
             type : pType,
+            crossDomain: true,
             url  : url,
             contentType: 'application/x-www-form-urlencoded',
             data : pData,
