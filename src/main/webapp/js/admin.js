@@ -40,20 +40,6 @@ $(document).ready(function(){
 						globalArrayReportes.push(reporte);
 						//post
 						appendRow(reporte);
-						/*$('#listaReportes').append('\
-								<a id="'+reporte.id+'" class="list-group-item">\
-									<span class="badge">'+reporte.fecha+'</span>\
-									<i class="fa fa-fw fa-mobile-phone"></i> '+reporte.mensaje+'\
-									<div class="row">\
-		                                <div id="div_antes'+reporte.id+'" class="col-lg-4">\
-		                                </div>\
-		                                <div id="div_despues'+reporte.id+'" class="col-lg-4">\
-		                                </div>\
-		                            </div>\
-								</a>');
-						loadPhoto(reporte.id, true);
-						loadPhoto(reporte.id, false);*/
-						//document.getElementById("1251_antes").setAttribute( 'src', 'data:image/png;base64,'+dataIMGSRC);
 					}
 					$('#btnCargarMasReportes').show();
 				}
@@ -73,7 +59,7 @@ $(document).ready(function(){
 					for(var i = 0; i<reportesArray.length; i++){
 						var reporte = reportesArray[i];
 						//post
-						$('#listaRelevantes').append('\
+						/*$('#listaRelevantes').append('\
 							<a id="'+reporte.id+'" class="list-group-item">\
 									<span class="badge">'+reporte.fecha+'</span>\
 									<i class="fa fa-fw fa-mobile-phone"></i> '+reporte.mensaje+'\
@@ -83,9 +69,37 @@ $(document).ready(function(){
 		                                <div id="div_despues'+reporte.id+'" class="col-lg-4">\
 		                                </div>\
 		                            </div>\
+								</a>');*/
+						var badge = '<span class="badge" style="background-color:#d9534f;">'+reporte.fecha+'</span>';
+						if(reporte.solucionado == true){
+							badge = '<span class="badge" style="background-color:#5cb85c;">'+reporte.fecha+'</span>';
+						}
+						if(reporte.cerrado == true){
+							badge = '<span class="badge" style="background-color:#337ab7;">'+reporte.fecha+'</span>';
+						}
+
+						var imgFotoAntes = "";
+					    if(reporte.hasOwnProperty("fotoAntesLink")){
+					        imgFotoAntes = '<img style="border-radius: 0.5rem; width: 512px;" src="'+reporte.fotoAntesLink+'"/>';
+					    }
+					    var imgFotoDespues = "";
+					    if(reporte.hasOwnProperty("fotoDespuesLink")){
+					        imgFotoDespues = '<img style="border-radius: 0.5rem; width: 512px;" src="'+reporte.fotoDespuesLink+'"/>';
+					    }
+
+						$('#listaRelevantes').append('\
+								<a id="'+reporte.id+'" class="list-group-item">'+
+									badge+'\
+									<i class="fa fa-fw fa-mobile-phone"></i> '+reporte.mensaje+'\
+									<div class="row">\
+						                <div class="col-lg-4">'+
+						                	imgFotoAntes+
+						                '</div>\
+						                <div id="div_despues'+reporte.id+'" class="col-lg-4">'+
+						                	imgFotoDespues+
+						                '</div>\
+						            </div>\
 								</a>');
-						//loadPhoto(reporte.id, true);
-						//loadPhoto(reporte.id, false);
 					}
 				}
 			});
@@ -220,29 +234,6 @@ $(document).ready(function(){
 });
 
 
-/*function loadPhoto(idPostInt, antesBoolean){
-	var photoParams = {
-		idPost: idPostInt,
-		antes: antesBoolean
-	}
-
-	ajaxRequest("/statuses/photo", "GET", photoParams, function(responsePhoto){
-		var responseJSON = JSON.parse(responsePhoto);
-		if(responseJSON.error == false){
-			var stringFlagAntes = "";
-			if(antesBoolean){
-				stringFlagAntes = "_antes";
-			} else {
-				stringFlagAntes = "_despues";
-			}
-			$('#div'+stringFlagAntes+idPostInt).append('<img id="'+idPostInt+stringFlagAntes+'" style="border-radius: 0.5rem;">');
-
-			document.getElementById(idPostInt+stringFlagAntes).setAttribute( 'src', 'data:image/png;base64,'+responseJSON.msj);
-		}
-	});
-}*/
-
-
 function appendRow(reporte){
 	var badge = '<span class="badge" style="background-color:#d9534f;">'+reporte.fecha+'</span>';
 	if(reporte.solucionado == true){
@@ -254,11 +245,11 @@ function appendRow(reporte){
 
 	var imgFotoAntes = "";
     if(reporte.hasOwnProperty("fotoAntesLink")){
-        imgFotoAntes = '<img style="border-radius: 0.5rem;" src="'+reporte.fotoAntesLink+'"/>';
+        imgFotoAntes = '<img style="border-radius: 0.5rem; width: 512px;" src="'+reporte.fotoAntesLink+'" />';
     }
     var imgFotoDespues = "";
     if(reporte.hasOwnProperty("fotoDespuesLink")){
-        imgFotoDespues = '<img style="border-radius: 0.5rem;" src="'+reporte.fotoDespuesLink+'"/>';
+        imgFotoDespues = '<img style="border-radius: 0.5rem; width: 512px;" src="'+reporte.fotoDespuesLink+'" />';
     }
 
 	$('#listaReportes').append('\
@@ -274,6 +265,4 @@ function appendRow(reporte){
 	                '</div>\
 	            </div>\
 			</a>');
-	//loadPhoto(reporte.id, true);
-	//loadPhoto(reporte.id, false);
 }
