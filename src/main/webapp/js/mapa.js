@@ -31,7 +31,7 @@ $(document).ready(function(){
 			var coordenadasZonaUno = [];
 
 			var x = document.getElementById("page-wrapper");
-			if(navigator.geolocation){
+			/*if(navigator.geolocation){
 
 				var mapProp = {
 				    zoom:16,
@@ -55,7 +55,16 @@ $(document).ready(function(){
 			} else {
 				x.innerHTML = "Geolocaclizaci&oacute; no es soportada por este navegador.";
 				//TODO desactivar el boton
-			}
+			}*/
+			
+			
+			//como no es HTTPS no soporta el getCurrenPosition, asi que vamos a setear a uno por default
+			
+			map = new google.maps.Map(document.getElementById('googleMap'), {
+				  center: {lat: -25.2890355, lng: -57.6114492},
+				  zoom: 15,
+				  mapTypeId:google.maps.MapTypeId.ROADMAP
+				});
 
 
 			//traemos todos los reportes y los posicionamos sobre el mapa
