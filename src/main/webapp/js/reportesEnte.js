@@ -113,32 +113,11 @@ $(document).ready(function(){
 	});
 });
 
-/*function loadPhoto(idPostInt, antesBoolean){
-	var photoParams = {
-		idPost: idPostInt,
-		antes: antesBoolean
-	}
-
-	ajaxRequest("/statuses/photo", "GET", photoParams, function(responsePhoto){
-		var responseJSON = JSON.parse(responsePhoto);
-		if(responseJSON.error == false){
-			var stringFlagAntes = "";
-			if(antesBoolean){
-				stringFlagAntes = "_antes";
-			} else {
-				stringFlagAntes = "_despues";
-			}
-			$('#div'+stringFlagAntes+idPostInt).append('<img id="'+idPostInt+stringFlagAntes+'" style="border-radius: 0.5rem;">');
-
-			document.getElementById(idPostInt+stringFlagAntes).setAttribute( 'src', 'data:image/png;base64,'+responseJSON.msj);
-		}
-	});
-}*/
 
 function appendRow(reporte){
 	var imgFotoAntes = "";
 	if(reporte.hasOwnProperty("fotoAntesLink")){
-		imgFotoAntes = '<img style="border-radius: 0.5rem;" src="'+reporte.fotoAntesLink+'"/>';
+		imgFotoAntes = '<img style="border-radius: 0.5rem; width: 512px;" src="'+reporte.fotoAntesLink+'"/>';
 	}
 	//en teoria no deberia tener foto de despues asi que no se busca
 	$('#lista-reportes').append('\
