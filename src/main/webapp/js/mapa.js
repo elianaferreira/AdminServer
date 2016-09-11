@@ -112,6 +112,10 @@ $(document).ready(function(){
 								if(reporte["solucionado"] == true){
 									marker.setIcon('http://maps.google.com/mapfiles/ms/icons/green-dot.png');
 								}
+								//el azul es para un reporte cerrado por un administrador
+								if(reporte["cerrado"] == true){
+									marker.setIcon('http://maps.google.com/mapfiles/ms/icons/blue-dot.png');
+								}
 
 								//marker.addListener('click', showReport(marker));
 								// To add the marker to the map, call setMap();
